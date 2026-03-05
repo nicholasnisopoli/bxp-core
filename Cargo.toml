@@ -1,11 +1,13 @@
 [package]
-name = "bxp_node"
+name = "bxp-core"
 version = "0.1.0"
-edition = "2021"
-build = "build.rs"
-authors = ["Nicholas Nisopoli"]
-description = "BXP Core library: QUIC + Cap'n Proto networking"
+edition = "2026"
+description = "The core implementation of the Binary eXchange Protocol (BXP), a high-performance QUIC-based data transfer standard."
 license = "MIT"
+repository = "https://github.com/nicholasnisopoli/bxp-core"
+readme = "README.md"
+keywords = ["quic", "networking", "protocol", "capnp", "bxp"]
+categories = ["network-programming", "asynchronous"]
 
 [dependencies]
 quinn = "0.11"
