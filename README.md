@@ -1,7 +1,7 @@
-# BXP (Binary eXchange Protocol) 🚀
+# BXP (Binary eXchange Protocol) 
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Rust Version](https://img.shields.io/badge/rust-1.75%2B-orange.svg)
+![Rust Version](https://img.shields.io/badge/rust-1.93%2B-orange.svg)
 ![Status: Experimental](https://img.shields.io/badge/status-experimental-red.svg)
 
 **BXP** is a high-performance, binary-first data transfer protocol built on **QUIC** and **Cap'n Proto**. 
@@ -10,23 +10,25 @@ Designed as a modern, high-throughput alternative to legacy HTTP/REST for micros
 
 
 
-## ✨ Why BXP?
+## Why BXP?
 
 HTTP (even H2 and H3) carries legacy baggage: string-based headers, verbs designed for document retrieval, and heavy CPU parsing overhead. BXP starts from a clean slate:
 
 * **Zero-Copy Parsing:** Control messages are strictly typed using Cap'n Proto. The bytes received from the network socket are read directly as memory structs without a decoding or allocation phase.
 * **Built on QUIC:** Powered by `quinn`, BXP inherits mandatory TLS 1.3 encryption, 0-RTT handshakes, and true stream multiplexing.
-* **Separation of Concerns:** * **Stream 0 (Control Plane):** A persistent, bidirectional stream exclusively for authentication, metadata, and routing.
+* **Separation of Concerns:** 
+    * **Stream 0 (Control Plane):** A persistent, bidirectional stream exclusively for authentication, metadata, and routing.
     * **Streams 1-N (Data Plane):** Ephemeral, unidirectional streams spun up instantly to blast raw binary payloads without blocking administrative traffic.
 
-## 📦 Installation
+## Installation
 
 Add `bxp-core` to your Rust project:
 
 ```bash
 cargo add bxp-core
+```
 
-## 📊 Performance Benchmarks
+## Performance Benchmarks
 
 BXP was benchmarked against `tonic` (the premier Rust gRPC framework) over 1,000,000 sequential requests on a single multiplexed connection. 
 
