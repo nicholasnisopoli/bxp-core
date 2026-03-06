@@ -7,7 +7,9 @@ pub mod bxp_capnp {
 pub mod protocol;
 pub mod server;
 pub mod client;
+pub mod router;
 
-pub use protocol::{Action, BxpRequest, BxpResponse};
+pub use protocol::{BxpAction, BxpRequest, BxpResponse, BxpStatus};
 pub use server::{BxpServer, BxpServerConnection};
 pub use client::{BxpClient, BxpClientConnection};
+pub use router::{BxpRouter, BxpHandler};

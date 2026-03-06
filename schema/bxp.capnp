@@ -3,6 +3,7 @@
 enum Action {
   fetch @0;
   push @1;
+  ping @2;
 }
 
 struct Request {
@@ -13,5 +14,13 @@ struct Request {
 
 struct Response {
   requestId @0 :UInt32;
-  statusCode @1 :UInt16;
+  statusCode @1 :StatusCode;
+}
+
+enum StatusCode {
+  success @0;           # 200 OK equivalent
+  badRequest @1;        # 400 equivalent
+  unauthorized @2;      # 401 equivalent
+  notFound @3;          # 404 equivalent
+  internalError @4;     # 500 equivalent
 }
