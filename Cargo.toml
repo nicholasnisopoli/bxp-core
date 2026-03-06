@@ -1,6 +1,6 @@
 [package]
 name = "bxp-core"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "The core implementation of the Binary eXchange Protocol (BXP), a high-performance QUIC-based data transfer standard."
 license = "MIT"
