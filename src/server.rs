@@ -9,7 +9,7 @@ use std::{net::SocketAddr, sync::Arc, time::Duration};
 /// A client sending a length header larger than this is either buggy or malicious.
 /// Prevents a single bad client from forcing a multi-GB allocation.
 const MAX_CONTROL_MSG: usize = 1024 * 1024; // 1 MB
-
+/// The BxpServer struct represents a BXP server that listens for incoming connections and handles requests. It encapsulates the QUIC endpoint and provides methods for accepting connections and managing them. The BxpServerConnection struct represents an active connection to a client, allowing the server to receive requests, send responses, and manage data streams. These structs are designed to provide a clean and ergonomic API for building BXP servers that can handle multiple clients concurrently while maintaining type safety and efficient resource management.
 pub struct BxpServer {
     endpoint: Endpoint,
 }

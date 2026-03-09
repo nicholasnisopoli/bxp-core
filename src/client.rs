@@ -80,6 +80,9 @@ fn build_tls_config() -> Result<rustls::ClientConfig> {
         .with_no_client_auth())
 }
 
+/// Represents an active connection to a BXP server, encapsulating the QUIC connection and control streams.
+/// The client can send requests, receive responses, and manage data streams through this connection.
+/// The connection is established via `BxpClient::connect` and should be closed gracefully with `close()` when done.
 pub struct BxpClientConnection {
     quic_conn: Connection,
     control_send: SendStream,
