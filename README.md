@@ -28,6 +28,9 @@ Add `bxp-core` to your Rust project:
 cargo add bxp-core
 ```
 
+## Architecture
+<img width="1820" height="1104" alt="image" src="https://github.com/user-attachments/assets/0a25d57d-8126-4a65-999d-70a272163b5c" />
+
 ## Performance Benchmarks
 
 BXP was benchmarked against `tonic` (the premier Rust gRPC framework) over 1,000,000 sequential requests on a single multiplexed connection. 
